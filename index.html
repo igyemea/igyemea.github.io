@@ -1,0 +1,1524 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>比比资源 - 官方视频门户 | 原创高清内容社区</title>
+<meta name="description" content="比比资源官方网站，专注原创高清视频内容生态，汇聚优质创作者与专业影像作品，打造值得信赖的视频品牌社区平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141a2b'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%2338e8c4' stroke-width='4'/%3E%3Cpath d='M28 24l14 8-14 8z' fill='%23ff5c7a'/%3E%3C/svg%3E">
+<style>
+:root{
+--bb-bg:#0d1220;
+--bb-panel:#151d31;
+--bb-panel-2:#1b2440;
+--bb-line:rgba(120,150,220,.18);
+--bb-text:#e8edf9;
+--bb-dim:#9aa8c7;
+--bb-cyan:#38e8c4;
+--bb-pink:#ff5c7a;
+--bb-violet:#8a7bff;
+--bb-amber:#ffc65c;
+--bb-radius:16px;
+--bb-head-h:112px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+background:radial-gradient(1200px 600px at 80% -10%, rgba(138,123,255,.18), transparent 60%),
+radial-gradient(900px 500px at 0% 20%, rgba(56,232,196,.10), transparent 60%),
+var(--bb-bg);
+color:var(--bb-text);
+font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+line-height:1.75;
+font-size:16px;
+-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.bb-wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+section{scroll-margin-top:calc(var(--bb-head-h) + 12px)}
+
+/* 吸顶容器 */
+.bb-sticky{position:sticky;top:0;z-index:60}
+.bb-announce{
+background:linear-gradient(90deg,#ff5c7a 0%,#8a7bff 55%,#38e8c4 100%);
+color:#0b1020;font-size:13.5px;font-weight:700;
+display:flex;align-items:center;gap:10px;
+padding:7px 0;
+}
+.bb-announce .bb-wrap{display:flex;align-items:center;gap:12px;overflow:hidden}
+.bb-announce-tag{
+background:#0d1220;color:var(--bb-cyan);font-size:11px;letter-spacing:.14em;
+padding:2px 8px;border-radius:999px;flex:none;
+}
+.bb-announce-ticker{display:flex;gap:34px;white-space:nowrap;animation:bbTick 26s linear infinite}
+.bb-announce-ticker span{flex:none}
+@keyframes bbTick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.bb-header{
+background:rgba(13,18,32,.86);backdrop-filter:blur(14px);
+border-bottom:1px solid var(--bb-line);
+}
+.bb-nav{display:flex;align-items:center;gap:22px;height:64px}
+.bb-brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em;flex:none}
+.bb-brand-mark{
+width:34px;height:34px;border-radius:10px;flex:none;
+background:linear-gradient(135deg,#38e8c4,#8a7bff 60%,#ff5c7a);
+display:grid;place-items:center;color:#0b1020;font-size:15px;font-weight:900;
+}
+.bb-brand-txt{font-size:18px}
+.bb-brand-txt small{display:block;font-size:10px;letter-spacing:.28em;color:var(--bb-cyan);font-weight:600}
+.bb-menu{display:flex;align-items:center;gap:4px;margin-left:8px;flex:1 1 auto;min-width:0}
+.bb-menu a{
+padding:8px 12px;border-radius:10px;font-size:14.5px;color:var(--bb-dim);
+transition:.2s;white-space:nowrap;
+}
+.bb-menu a:hover{color:var(--bb-text);background:rgba(138,123,255,.14)}
+.bb-search{
+display:flex;align-items:center;gap:6px;background:var(--bb-panel);
+border:1px solid var(--bb-line);border-radius:999px;padding:5px 6px 5px 14px;
+flex:none;
+}
+.bb-search input{
+background:none;border:none;outline:none;color:var(--bb-text);width:150px;font-size:13.5px;
+}
+.bb-search input::placeholder{color:#6b7a99}
+.bb-search button{
+background:linear-gradient(135deg,#38e8c4,#8a7bff);color:#0b1020;font-weight:800;
+border-radius:999px;padding:6px 14px;font-size:13px;
+}
+.bb-nav-toggle{display:none;font-size:22px;padding:4px 8px;border-radius:8px;border:1px solid var(--bb-line)}
+.bb-search-feedback{
+font-size:12.5px;color:var(--bb-cyan);padding:0 0 0 4px;display:none;
+}
+.bb-search-feedback.on{display:block}
+
+/* HERO */
+.bb-hero{padding:56px 0 44px}
+.bb-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.bb-eyebrow{
+display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.16em;
+color:var(--bb-cyan);border:1px solid rgba(56,232,196,.35);border-radius:999px;
+padding:5px 14px;margin-bottom:20px;background:rgba(56,232,196,.06);
+}
+.bb-eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--bb-pink);display:inline-block}
+h1.bb-h1{
+font-size:clamp(38px,5.4vw,64px);line-height:1.08;letter-spacing:-.02em;font-weight:900;
+}
+h1.bb-h1 em{
+font-style:normal;background:linear-gradient(120deg,#38e8c4,#8a7bff 50%,#ff5c7a);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.bb-hero-lead{color:var(--bb-dim);font-size:16px;margin:20px 0 8px;max-width:34em}
+.bb-hero-intro{
+font-size:14.5px;color:#b7c2dc;border-left:3px solid var(--bb-pink);
+padding-left:16px;margin:16px 0 24px;max-width:36em;
+}
+.bb-hero-stats{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:26px}
+.bb-stat b{display:block;font-size:26px;font-weight:900;color:var(--bb-text);letter-spacing:-.01em}
+.bb-stat span{font-size:12.5px;color:var(--bb-dim);letter-spacing:.06em}
+.bb-stat b i{font-style:normal;color:var(--bb-cyan);font-size:15px;margin-left:2px}
+.bb-hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.bb-btn{
+display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 22px;
+font-size:14.5px;font-weight:700;transition:.2s;border:1px solid transparent;
+}
+.bb-btn-primary{background:linear-gradient(135deg,#38e8c4,#8a7bff);color:#0b1020}
+.bb-btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(138,123,255,.35)}
+.bb-btn-ghost{border-color:var(--bb-line);color:var(--bb-text);background:rgba(255,255,255,.02)}
+.bb-btn-ghost:hover{border-color:var(--bb-cyan);color:var(--bb-cyan)}
+.bb-hero-visual{position:relative}
+.bb-hero-visual .bb-hero-img{
+border-radius:22px;overflow:hidden;border:1px solid var(--bb-line);
+box-shadow:0 30px 70px -30px rgba(56,232,196,.45);
+}
+.bb-hero-img svg{display:block;width:100%;height:auto;aspect-ratio:4/3}
+.bb-hero-chip{
+position:absolute;left:-14px;bottom:22px;background:var(--bb-panel-2);
+border:1px solid var(--bb-line);border-radius:14px;padding:10px 16px;font-size:12.5px;
+display:flex;align-items:center;gap:9px;box-shadow:0 16px 40px -18px #000;
+}
+.bb-hero-chip i{width:8px;height:8px;border-radius:50%;background:var(--bb-pink);box-shadow:0 0 0 4px rgba(255,92,122,.18)}
+.bb-hero-chip b{color:var(--bb-cyan)}
+
+/* 通用 H2 */
+.bb-sec{padding:52px 0}
+.bb-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.bb-sec-head h2{font-size:clamp(24px,2.7vw,32px);font-weight:900;letter-spacing:-.01em;line-height:1.2}
+.bb-sec-head h2 span{color:var(--bb-cyan)}
+.bb-sec-head p{color:var(--bb-dim);font-size:14px;max-width:44em}
+.bb-kicker{
+font-size:12px;letter-spacing:.2em;color:var(--bb-violet);font-weight:700;display:block;margin-bottom:8px;
+}
+.bb-divider{height:1px;background:linear-gradient(90deg,var(--bb-line),transparent)}
+h3{font-size:17.5px;font-weight:800;line-height:1.45;margin-bottom:8px}
+
+/* 焦点大图 + 文字列表 */
+.bb-focus-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:30px}
+.bb-focus-main{
+background:var(--bb-panel);border:1px solid var(--bb-line);border-radius:var(--bb-radius);
+overflow:hidden;display:flex;flex-direction:column;
+}
+.bb-focus-cover{position:relative}
+.bb-focus-cover svg{width:100%;height:auto;aspect-ratio:16/9;display:block}
+.bb-play{
+position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+}
+.bb-play span{
+width:60px;height:60px;border-radius:50%;background:rgba(13,18,32,.62);
+border:1px solid rgba(56,232,196,.7);display:grid;place-items:center;color:var(--bb-cyan);font-size:20px;
+backdrop-filter:blur(4px);
+}
+.bb-focus-body{padding:20px 22px 22px}
+.bb-meta{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--bb-dim);margin-bottom:10px;align-items:center}
+.bb-tag{
+background:rgba(138,123,255,.16);color:#c5bcff;border:1px solid rgba(138,123,255,.3);
+border-radius:999px;padding:2px 10px;font-size:11.5px;
+}
+.bb-tag.pink{background:rgba(255,92,122,.14);color:#ff9db0;border-color:rgba(255,92,122,.32)}
+.bb-tag.cyan{background:rgba(56,232,196,.12);color:#8ff5e0;border-color:rgba(56,232,196,.32)}
+.bb-focus-body p{color:var(--bb-dim);font-size:14px}
+.bb-focus-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.bb-mini-btn{
+border:1px solid var(--bb-line);border-radius:999px;padding:5px 13px;font-size:12.5px;color:var(--bb-dim);
+display:inline-flex;align-items:center;gap:6px;transition:.2s;background:rgba(255,255,255,.02);
+}
+.bb-mini-btn:hover{border-color:var(--bb-cyan);color:var(--bb-cyan)}
+.bb-mini-btn.act{background:rgba(255,92,122,.14);border-color:rgba(255,92,122,.5);color:#ff9db0}
+.bb-mini-btn.save.act{background:rgba(255,198,92,.14);border-color:rgba(255,198,92,.5);color:var(--bb-amber)}
+
+.bb-side-list{display:flex;flex-direction:column;gap:12px}
+.bb-side-item{
+display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;
+background:rgba(255,255,255,.022);border:1px solid var(--bb-line);border-radius:14px;
+padding:14px 16px;transition:.22s;
+}
+.bb-side-item:hover{border-color:rgba(56,232,196,.45);transform:translateX(3px);background:rgba(56,232,196,.05)}
+.bb-side-num{
+font-weight:900;font-size:16px;color:var(--bb-violet);line-height:1.6;
+}
+.bb-side-item h3{font-size:15px;margin-bottom:4px}
+.bb-side-item p{font-size:12.5px;color:var(--bb-dim)}
+.bb-side-item .bb-meta{margin:6px 0 0}
+
+/* 视频列表 */
+.bb-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.bb-vcard{
+background:var(--bb-panel);border:1px solid var(--bb-line);border-radius:var(--bb-radius);
+overflow:hidden;display:flex;flex-direction:column;transition:.24s;
+}
+.bb-vcard:hover{transform:translateY(-5px);border-color:rgba(138,123,255,.5);box-shadow:0 22px 44px -26px rgba(138,123,255,.6)}
+.bb-vcard-cover{position:relative}
+.bb-vcard-cover svg{width:100%;height:auto;aspect-ratio:16/9;display:block}
+.bb-vcard-body{padding:16px 17px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.bb-vcard-body h3{font-size:15.5px}
+.bb-vcard-body p{font-size:13px;color:var(--bb-dim);flex:1}
+.bb-vcard-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--bb-dim);border-top:1px solid var(--bb-line);padding-top:10px;margin-top:6px}
+.bb-vcard-foot .bb-row{display:flex;gap:8px;align-items:center}
+
+/* 专题 */
+.bb-topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.bb-topic{
+background:linear-gradient(160deg,var(--bb-panel-2),var(--bb-panel));
+border:1px solid var(--bb-line);border-radius:var(--bb-radius);padding:24px;position:relative;overflow:hidden;
+}
+.bb-topic::after{
+content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;
+background:radial-gradient(circle,rgba(56,232,196,.18),transparent 70%);
+}
+.bb-topic-status{font-size:11.5px;letter-spacing:.1em;color:var(--bb-cyan);margin-bottom:8px;display:inline-block}
+.bb-topic h3{font-size:19px}
+.bb-topic>p{font-size:13.5px;color:var(--bb-dim);margin:8px 0 14px}
+.bb-topic ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.bb-topic li{
+font-size:13.5px;color:#c4cde4;padding-left:16px;position:relative;
+}
+.bb-topic li::before{
+content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--bb-pink);
+}
+
+/* 作者 */
+.bb-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.bb-author{
+display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:start;
+background:var(--bb-panel);border:1px solid var(--bb-line);border-radius:var(--bb-radius);padding:20px;
+transition:.22s;
+}
+.bb-author:hover{border-color:rgba(56,232,196,.45)}
+.bb-avatar{
+width:64px;height:64px;border-radius:18px;display:grid;place-items:center;
+font-size:23px;font-weight:900;color:#0b1020;flex:none;cursor:pointer;
+}
+.bb-avatar.a1{background:linear-gradient(135deg,#38e8c4,#2a9d8f)}
+.bb-avatar.a2{background:linear-gradient(135deg,#ff5c7a,#ffb86b)}
+.bb-avatar.a3{background:linear-gradient(135deg,#8a7bff,#4a6cf7)}
+.bb-avatar.a4{background:linear-gradient(135deg,#ffc65c,#ffe9a8)}
+.bb-avatar.a5{background:linear-gradient(135deg,#4a6cf7,#a3e4ff)}
+.bb-avatar.a6{background:linear-gradient(135deg,#ff8fab,#c084fc)}
+.bb-author h3{font-size:16px;margin-bottom:2px}
+.bb-author .bb-role{font-size:12px;color:var(--bb-cyan);letter-spacing:.04em;margin-bottom:6px}
+.bb-author p{font-size:13px;color:var(--bb-dim)}
+.bb-author .bb-author-nums{display:flex;gap:14px;font-size:12px;color:#8ea0c2;margin-top:8px;flex-wrap:wrap}
+.bb-author .bb-author-nums b{color:var(--bb-text)}
+.bb-author-more{
+grid-column:2;margin-top:2px;
+}
+
+/* 关键词解析长文 */
+.bb-essay{
+background:var(--bb-panel);border:1px solid var(--bb-line);border-radius:var(--bb-radius);
+padding:clamp(22px,3.4vw,42px);
+}
+.bb-essay h3{font-size:19px;margin-top:26px;color:#fff}
+.bb-essay h3:first-of-type{margin-top:0}
+.bb-essay p{color:#bcc6de;font-size:15px;margin-top:10px;line-height:1.9}
+.bb-essay .bb-quote{
+border-left:3px solid var(--bb-violet);padding:12px 18px;margin:20px 0;
+background:rgba(138,123,255,.07);border-radius:0 12px 12px 0;color:#d4dcf0;font-size:14.5px;
+}
+.bb-essay-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.bb-essay-card{
+border:1px solid var(--bb-line);border-radius:14px;padding:16px;background:rgba(255,255,255,.02);
+}
+.bb-essay-card h4{font-size:14.5px;color:var(--bb-cyan);margin-bottom:6px;font-weight:800}
+.bb-essay-card p{font-size:13px;margin-top:0}
+
+/* 评论/评价 */
+.bb-comment-list{display:flex;flex-direction:column;gap:14px}
+.bb-comment{
+background:rgba(255,255,255,.022);border:1px solid var(--bb-line);border-radius:14px;
+padding:16px 18px;
+}
+.bb-comment-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.bb-comment-head .bb-avatar{width:36px;height:36px;border-radius:50%;font-size:14px}
+.bb-comment-head b{font-size:13.5px}
+.bb-comment-head span{font-size:11.5px;color:#7a89a8}
+.bb-comment p{font-size:13.5px;color:#c2cbe2}
+.bb-comment-stars{color:var(--bb-amber);font-size:12px;letter-spacing:2px;margin-left:auto}
+
+/* 数据榜单 */
+.bb-rank{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bb-rank-col{
+background:var(--bb-panel);border:1px solid var(--bb-line);border-radius:var(--bb-radius);padding:20px;
+}
+.bb-rank-col h3{font-size:15px;color:var(--bb-cyan);margin-bottom:14px;letter-spacing:.05em}
+.bb-rank-col ol{list-style:none;display:flex;flex-direction:column;gap:11px;counter-reset:r}
+.bb-rank-col li{
+display:grid;grid-template-columns:22px minmax(0,1fr);gap:9px;font-size:13px;align-items:baseline;
+}
+.bb-rank-col li::before{
+counter-increment:r;content:counter(r);font-weight:900;color:var(--bb-pink);font-size:13px;
+}
+.bb-rank-col li b{display:block;font-weight:700;color:var(--bb-text)}
+.bb-rank-col li span{font-size:11.5px;color:#7f8dab;display:block}
+
+/* 动态 */
+.bb-news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.bb-news-item{
+border:1px solid var(--bb-line);border-radius:14px;padding:18px;background:rgba(255,255,255,.02);
+transition:.2s;
+}
+.bb-news-item:hover{border-color:rgba(255,198,92,.45)}
+.bb-news-item time{font-size:11.5px;color:var(--bb-amber);letter-spacing:.06em}
+.bb-news-item h3{font-size:15px;margin:8px 0 6px}
+.bb-news-item p{font-size:13px;color:var(--bb-dim)}
+
+/* 合作 & FAQ */
+.bb-brandwall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.bb-brandchip{
+border:1px dashed var(--bb-line);border-radius:12px;padding:16px;text-align:center;
+font-size:13.5px;font-weight:700;color:#9fb0d0;letter-spacing:.04em;
+}
+.bb-faq{display:flex;flex-direction:column;gap:10px}
+.bb-faq details{
+background:var(--bb-panel);border:1px solid var(--bb-line);border-radius:12px;padding:2px 18px;
+}
+.bb-faq summary{
+cursor:pointer;padding:14px 0;font-size:14.5px;font-weight:700;list-style:none;
+display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+.bb-faq summary::-webkit-details-marker{display:none}
+.bb-faq summary::after{content:"+";color:var(--bb-cyan);font-size:19px;font-weight:400}
+.bb-faq details[open] summary::after{content:"–"}
+.bb-faq details p{font-size:13.5px;color:var(--bb-dim);padding:0 0 16px}
+
+/* footer */
+.bb-footer{
+border-top:1px solid var(--bb-line);margin-top:30px;padding:44px 0 26px;
+background:rgba(255,255,255,.015);
+}
+.bb-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.bb-footer h4{font-size:13px;letter-spacing:.12em;color:#8ea0c2;margin-bottom:12px}
+.bb-footer ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--bb-dim)}
+.bb-footer a:hover{color:var(--bb-cyan)}
+.bb-footer-brand p{font-size:13.5px;color:var(--bb-dim);margin-top:10px;max-width:30em}
+.bb-copyright{
+margin-top:30px;padding-top:18px;border-top:1px solid var(--bb-line);
+display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#6e7c99;
+}
+
+/* toast & 回顶 */
+.bb-toast{
+position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+background:#0b1020;border:1px solid var(--bb-cyan);color:var(--bb-cyan);
+padding:10px 20px;border-radius:999px;font-size:13.5px;z-index:200;
+opacity:0;pointer-events:none;transition:.28s;box-shadow:0 14px 40px -14px #000;
+}
+.bb-toast.on{opacity:1;transform:translate(-50%,0)}
+.bb-totop{
+position:fixed;right:22px;bottom:24px;width:44px;height:44px;border-radius:50%;
+background:linear-gradient(135deg,#38e8c4,#8a7bff);color:#0b1020;font-weight:900;font-size:17px;
+display:grid;place-items:center;z-index:90;opacity:0;pointer-events:none;transition:.25s;
+box-shadow:0 12px 30px -12px rgba(56,232,196,.8);
+}
+.bb-totop.on{opacity:1;pointer-events:auto}
+
+/* 弹窗 */
+.bb-modal{
+position:fixed;inset:0;background:rgba(5,8,16,.72);backdrop-filter:blur(4px);
+display:none;place-items:center;z-index:150;padding:20px;
+}
+.bb-modal.on{display:grid}
+.bb-modal-box{
+background:var(--bb-panel-2);border:1px solid var(--bb-line);border-radius:18px;
+max-width:460px;width:100%;padding:26px;position:relative;
+}
+.bb-modal-box h3{font-size:17px;margin-bottom:10px}
+.bb-modal-box p{font-size:13.5px;color:var(--bb-dim);margin-bottom:14px}
+.bb-modal-close{
+position:absolute;right:14px;top:12px;font-size:20px;color:#8090b0;line-height:1;
+}
+.bb-modal-close:hover{color:var(--bb-pink)}
+.bb-form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.bb-form-row input,.bb-form-row textarea{
+background:rgba(255,255,255,.04);border:1px solid var(--bb-line);border-radius:10px;
+padding:10px 12px;color:var(--bb-text);font-size:13.5px;outline:none;font-family:inherit;resize:vertical;
+}
+.bb-form-row input:focus,.bb-form-row textarea:focus{border-color:var(--bb-cyan)}
+
+@media (max-width:1000px){
+.bb-hero-grid{grid-template-columns:1fr;gap:30px}
+.bb-focus-grid{grid-template-columns:1fr}
+.bb-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bb-rank,.bb-news{grid-template-columns:1fr}
+.bb-footer-grid{grid-template-columns:1fr 1fr}
+.bb-essay-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+.bb-nav{flex-wrap:wrap;height:auto;padding:10px 0;gap:12px}
+.bb-menu{
+order:3;width:100%;flex-direction:column;align-items:stretch;
+max-height:0;overflow:hidden;transition:max-height .3s;margin:0;
+}
+.bb-menu.open{max-height:460px}
+.bb-menu a{padding:11px 12px;border-bottom:1px solid var(--bb-line)}
+.bb-search{order:2;flex:1 1 auto}
+.bb-search input{width:100%}
+.bb-nav-toggle{display:block;order:1;margin-left:auto}
+.bb-brand{order:1}
+.bb-nav .bb-search{order:2}
+.bb-nav-toggle{order:3}
+.bb-video-grid,.bb-author-grid,.bb-topic-grid,.bb-brandwall{grid-template-columns:1fr}
+.bb-rank-col{padding:16px}
+.bb-hero{padding:38px 0 30px}
+.bb-hero-chip{left:6px;bottom:10px}
+.bb-announce-ticker{animation-duration:34s}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="bb-sticky">
+  <div class="bb-announce" role="region" aria-label="站点公告">
+    <div class="bb-wrap">
+      <span class="bb-announce-tag">官方发布</span>
+      <div class="bb-announce-ticker" id="bbTicker">
+        <span>「比比资源」2026 冬季原创影像企划《城市醒着》开放报名</span>
+        <span>新增 128 部高清正版短片，全部支持 4K 下载</span>
+        <span>创作者扶持计划第三期启动，最高 5 万元创作基金</span>
+        <span>社区投票通道上线：年度口碑作品由你来定</span>
+        <span>「比比资源」2026 冬季原创影像企划《城市醒着》开放报名</span>
+        <span>新增 128 部高清正版短片，全部支持 4K 下载</span>
+        <span>创作者扶持计划第三期启动，最高 5 万元创作基金</span>
+        <span>社区投票通道上线：年度口碑作品由你来定</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="bb-header">
+    <div class="bb-wrap">
+      <nav class="bb-nav" aria-label="主导航">
+        <a class="bb-brand" href="#bb-hero">
+          <span class="bb-brand-mark">比</span>
+          <span class="bb-brand-txt">比比资源<small>BIBI RESOURCE</small></span>
+        </a>
+        <button class="bb-nav-toggle" id="bbNavToggle" aria-label="展开导航" aria-expanded="false">☰</button>
+        <div class="bb-menu" id="bbMenu">
+          <a href="#bb-focus">焦点内容</a>
+          <a href="#bb-videos">视频库</a>
+          <a href="#bb-topics">专题企划</a>
+          <a href="#bb-authors">创作者</a>
+          <a href="#bb-essay">品牌解析</a>
+          <a href="#bb-comments">社区口碑</a>
+          <a href="#bb-faq">帮助中心</a>
+        </div>
+        <div class="bb-search">
+          <input id="bbSearchInput" type="search" placeholder="搜索视频、创作者、专题" aria-label="站内搜索">
+          <button id="bbSearchBtn" type="button">搜索</button>
+        </div>
+      </nav>
+      <div class="bb-wrap" style="width:100%;padding:0"><div class="bb-search-feedback" id="bbSearchFeedback"></div></div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="bb-hero" id="bb-hero">
+    <div class="bb-wrap bb-hero-grid">
+      <div>
+        <span class="bb-eyebrow"><i></i>原创 · 正版 · 高清 · 持续运营</span>
+        <h1 class="bb-h1">比比资源<em>官网</em></h1>
+        <p class="bb-hero-lead">一个以原创影像为核心的视频品牌平台，用专业的内容生态连接创作者、企业与每一位真实表达的观众。</p>
+        <p class="bb-hero-intro">作为深耕视频领域的原创内容品牌，「比比资源」官方网站致力于打造值得信赖的高品质视频社区。我们聚焦城市纪录、人物访谈、创作幕后与行业观察，坚持正版高清、匠心制作，让每一部作品都被认真看见，也让每一位创作者获得可持续的成长与陪伴。</p>
+        <div class="bb-hero-stats">
+          <div class="bb-stat"><b data-bb-count="12800">0</b><span>原创高清作品</span></div>
+          <div class="bb-stat"><b data-bb-count="960">0</b><span>签约创作者</span></div>
+          <div class="bb-stat"><b data-bb-count="2400000">0</b><span>月度社区活跃</span></div>
+        </div>
+        <div class="bb-hero-actions">
+          <a class="bb-btn bb-btn-primary" href="#bb-videos">进入视频库 →</a>
+          <a class="bb-btn bb-btn-ghost" href="#bb-authors">认识创作者</a>
+          <button class="bb-btn bb-btn-ghost" id="bbOpenSubmit">投稿与分享</button>
+        </div>
+      </div>
+      <div class="bb-hero-visual">
+        <div class="bb-hero-img">
+          <svg viewBox="0 0 800 600" role="img" aria-label="比比资源官方主视觉：夜色城市天际线与摄像机取景框">
+            <defs>
+              <linearGradient id="bbSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#101a33"/>
+                <stop offset=".55" stop-color="#1d2a52"/>
+                <stop offset="1" stop-color="#0c1224"/>
+              </linearGradient>
+              <linearGradient id="bbWin" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#38e8c4"/>
+                <stop offset="1" stop-color="#8a7bff"/>
+              </linearGradient>
+              <linearGradient id="bbGlow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff5c7a" stop-opacity=".9"/>
+                <stop offset="1" stop-color="#ffc65c" stop-opacity=".1"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="600" fill="url(#bbSky)"/>
+            <circle cx="640" cy="120" r="54" fill="#38e8c4" opacity=".22"/>
+            <circle cx="640" cy="120" r="26" fill="#8ff5e0" opacity=".85"/>
+            <g opacity=".85">
+              <rect x="60" y="300" width="90" height="240" fill="#16223f"/>
+              <rect x="160" y="240" width="70" height="300" fill="#1a2747"/>
+              <rect x="240" y="330" width="110" height="210" fill="#13203c"/>
+              <rect x="360" y="200" width="80" height="340" fill="#1c2a4d"/>
+              <rect x="450" y="280" width="100" height="260" fill="#15213e"/>
+              <rect x="560" y="350" width="120" height="190" fill="#182642"/>
+              <rect x="690" y="300" width="60" height="240" fill="#13203a"/>
+            </g>
+            <g fill="url(#bbWin)" opacity=".85">
+              <rect x="76" y="320" width="12" height="12"/><rect x="100" y="320" width="12" height="12"/>
+              <rect x="124" y="352" width="12" height="12"/><rect x="76" y="384" width="12" height="12"/>
+              <rect x="176" y="264" width="12" height="12"/><rect x="200" y="296" width="12" height="12"/>
+              <rect x="176" y="392" width="12" height="12"/>
+              <rect x="374" y="224" width="12" height="12"/><rect x="400" y="256" width="12" height="12"/>
+              <rect x="374" y="352" width="12" height="12"/><rect x="400" y="404" width="12" height="12"/>
+              <rect x="470" y="306" width="12" height="12"/><rect x="500" y="350" width="12" height="12"/>
+              <rect x="580" y="376" width="12" height="12"/><rect x="612" y="410" width="12" height="12"/>
+              <rect x="646" y="376" width="12" height="12"/>
+            </g>
+            <rect x="150" y="120" width="300" height="180" rx="10" fill="none" stroke="url(#bbGlow)" stroke-width="2"/>
+            <g stroke="#38e8c4" stroke-width="3" fill="none" opacity=".95">
+              <path d="M120 90h60M120 90v60"/>
+              <path d="M480 90h-60M480 90v60"/>
+              <path d="M120 330v-40M480 330v-40"/>
+            </g>
+            <path d="M270 180l70 30-70 30z" fill="#38e8c4" opacity=".9"/>
+            <g opacity=".55" stroke="#8a7bff" stroke-width="2">
+              <line x1="0" y1="540" x2="800" y2="540"/>
+            </g>
+          </svg>
+        </div>
+        <div class="bb-hero-chip"><i></i>本周更新 <b>42</b> 部高清正版作品</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="bb-sec" id="bb-focus">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">EDITOR'S PICK · 焦点推荐</span>
+          <h2>今日焦点 · 值得一看的<span>比比资源</span>精品内容</h2>
+          <p>由官方编辑团队从数万部原创作品中精选，兼顾影像品质与真实表达，呈现平台的内容生态与专业判断。</p>
+        </div>
+      </div>
+
+      <div class="bb-focus-grid">
+        <article class="bb-focus-main">
+          <div class="bb-focus-cover">
+            <svg viewBox="0 0 800 450" role="img" aria-label="焦点内容封面：晨光中的城市天桥与行人剪影">
+              <defs>
+                <linearGradient id="bbF1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#ffb86b"/><stop offset=".5" stop-color="#ff5c7a"/><stop offset="1" stop-color="#8a7bff"/>
+                </linearGradient>
+                <linearGradient id="bbF2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#1a2444"/><stop offset="1" stop-color="#0c1224"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="450" fill="url(#bbF2)"/>
+              <circle cx="560" cy="160" r="110" fill="url(#bbF1)" opacity=".55"/>
+              <circle cx="560" cy="160" r="56" fill="#ffe9a8" opacity=".9"/>
+              <path d="M0 340h800v110H0z" fill="#0f1830"/>
+              <path d="M0 340h800" stroke="#38e8c4" stroke-width="2" opacity=".6"/>
+              <g fill="#0b1120">
+                <rect x="90" y="230" width="16" height="110" rx="6"/>
+                <circle cx="98" cy="218" r="14"/>
+                <rect x="150" y="250" width="16" height="90" rx="6"/>
+                <circle cx="158" cy="238" r="13"/>
+                <rect x="220" y="240" width="15" height="100" rx="6"/>
+                <circle cx="227" cy="228" r="12"/>
+              </g>
+              <g stroke="#38e8c4" stroke-width="2" opacity=".7" fill="none">
+                <path d="M60 340q120-140 300-140t380 140"/>
+              </g>
+              <rect x="520" y="300" width="210" height="26" rx="8" fill="#1b2440" stroke="#ff5c7a" stroke-width="1.6"/>
+              <text x="538" y="319" font-size="15" fill="#ff9db0" font-family="sans-serif">比比资源 · 城市醒着</text>
+            </svg>
+            <div class="bb-play"><span>▶</span></div>
+          </div>
+          <div class="bb-focus-body">
+            <div class="bb-meta">
+              <span class="bb-tag pink">重点企划</span>
+              <span class="bb-tag cyan">城市探索</span>
+              <span>作者：凌晨四点</span><span>·</span><span>时长 18:42</span>
+            </div>
+            <h3>《城市醒着》第一集：凌晨四点的早餐铺与守夜人</h3>
+            <p>我们跟着三位城市里最早醒来的人，记录他们如何点亮一条街。全片采用原生 4K 拍摄，保留现场声与呼吸感，是比比资源 2026 冬季企划的开篇之作，也是平台「真实记录」内容主张的代表。</p>
+            <div class="bb-focus-actions">
+              <button class="bb-mini-btn" data-bb-like>♡ <span>2.4万</span> 点赞</button>
+              <button class="bb-mini-btn save" data-bb-save>☆ 收藏</button>
+              <button class="bb-mini-btn" data-bb-copy>⧉ 复制链接</button>
+              <button class="bb-mini-btn" data-bb-share>↗ 分享</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="bb-side-list">
+          <a class="bb-side-item" href="#bb-videos">
+            <span class="bb-side-num">01</span>
+            <div>
+              <h3>《一条街的三十年》：老城区店铺影像档案</h3>
+              <p>用 11 位店主的自述串起同一条街的时间线，素材横跨三年。</p>
+              <div class="bb-meta"><span class="bb-tag">在地文化</span><span>6.8万播放</span></div>
+            </div>
+          </a>
+          <a class="bb-side-item" href="#bb-videos">
+            <span class="bb-side-num">02</span>
+            <div>
+              <h3>创作幕后：一部 12 分钟短片的 47 天</h3>
+              <p>从分镜到混音，完整拆解小团队如何用有限预算完成专业交付。</p>
+              <div class="bb-meta"><span class="bb-tag">创作幕后</span><span>5.2万播放</span></div>
+            </div>
+          </a>
+          <a class="bb-side-item" href="#bb-videos">
+            <span class="bb-side-num">03</span>
+            <div>
+              <h3>访谈｜把镜头交给普通人之后发生了什么</h3>
+              <p>与三位纪录片导演对谈，聊聊信任、边界与影像的伦理。</p>
+              <div class="bb-meta"><span class="bb-tag">人物访谈</span><span>4.1万播放</span></div>
+            </div>
+          </a>
+          <a class="bb-side-item" href="#bb-videos">
+            <span class="bb-side-num">04</span>
+            <div>
+              <h3>实用技巧：手机也能拍出电影感运镜的 5 个练习</h3>
+              <p>可直接照做的训练清单，适合刚开始接触影像记录的新人。</p>
+              <div class="bb-meta"><span class="bb-tag cyan">教程干货</span><span>7.9万播放</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 视频库 -->
+  <section class="bb-sec" id="bb-videos">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">VIDEO LIBRARY · 视频库</span>
+          <h2>比比资源高清视频库 · <span>本周热门</span></h2>
+          <p>全部内容为正版授权或创作者原创首发，支持高清播放与合规下载，持续更新。</p>
+        </div>
+        <a class="bb-btn bb-btn-ghost" href="#bb-topics">查看全部专题</a>
+      </div>
+
+      <div class="bb-video-grid">
+        <article class="bb-vcard">
+          <div class="bb-vcard-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：海边的长焦镜头与翻涌浪花">
+              <rect width="640" height="360" fill="#10304a"/>
+              <path d="M0 240q90-40 180 0t180 0 180 0 100-10v130H0z" fill="#1c5f7a" opacity=".9"/>
+              <path d="M0 280q110-46 220 0t220 0 200 0v80H0z" fill="#38e8c4" opacity=".35"/>
+              <circle cx="160" cy="110" r="46" fill="#ffe9a8" opacity=".8"/>
+              <rect x="400" y="120" width="150" height="70" rx="14" fill="#0b1120" stroke="#8a7bff" stroke-width="2"/>
+              <circle cx="500" cy="155" r="22" fill="none" stroke="#38e8c4" stroke-width="3"/>
+              <circle cx="500" cy="155" r="8" fill="#ff5c7a"/>
+              <rect x="400" y="110" width="40" height="20" rx="6" fill="#8a7bff"/>
+            </svg>
+          </div>
+          <div class="bb-vcard-body">
+            <div class="bb-meta"><span class="bb-tag cyan">旅行见闻</span><span class="bb-tag">高清</span></div>
+            <h3>沿海小城的十二种蓝：一次没有攻略的旅行</h3>
+            <p>不带计划地走完 300 公里海岸线，记录天气、潮汐与当地人的日常节奏。</p>
+            <div class="bb-vcard-foot">
+              <span>作者：盐渍橘子</span>
+              <span class="bb-row">
+                <button class="bb-mini-btn" data-bb-like>♡ <span>8621</span></button>
+                <button class="bb-mini-btn save" data-bb-save>☆</button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bb-vcard">
+          <div class="bb-vcard-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：厨房案板上的面粉与手部特写">
+              <rect width="640" height="360" fill="#2a1c14"/>
+              <rect x="0" y="210" width="640" height="150" fill="#3d2a1c"/>
+              <ellipse cx="320" cy="250" rx="220" ry="52" fill="#5b3f26" opacity=".7"/>
+              <circle cx="250" cy="200" r="44" fill="#f3e4c8" opacity=".85"/>
+              <circle cx="340" cy="180" r="30" fill="#f3e4c8" opacity=".6"/>
+              <circle cx="420" cy="215" r="20" fill="#f3e4c8" opacity=".5"/>
+              <rect x="150" y="240" width="190" height="14" rx="7" fill="#ffc65c"/>
+              <rect x="150" y="240" width="96" height="14" rx="7" fill="#ff5c7a"/>
+              <g stroke="#ffc65c" stroke-width="2" opacity=".8" fill="none">
+                <path d="M470 120q30 40 10 90"/>
+                <path d="M500 130q26 36 8 80"/>
+              </g>
+            </svg>
+          </div>
+          <div class="bb-vcard-body">
+            <div class="bb-meta"><span class="bb-tag">美食烹饪</span><span class="bb-tag pink">教程</span></div>
+            <h3>一锅到底：给加班的人准备的 20 分钟晚餐方案</h3>
+            <p>五种主食与三种配菜的自由组合，附完整时间轴与备菜清单。</p>
+            <div class="bb-vcard-foot">
+              <span>作者：半勺盐</span>
+              <span class="bb-row">
+                <button class="bb-mini-btn" data-bb-like>♡ <span>1.2万</span></button>
+                <button class="bb-mini-btn save" data-bb-save>☆</button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bb-vcard">
+          <div class="bb-vcard-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：工作台上的镜头零件与剪辑时间线">
+              <rect width="640" height="360" fill="#111a2e"/>
+              <rect x="70" y="70" width="500" height="220" rx="14" fill="#182544" stroke="#8a7bff" stroke-width="2"/>
+              <g fill="#38e8c4" opacity=".85">
+                <rect x="96" y="96" width="120" height="16" rx="8"/>
+                <rect x="96" y="124" width="200" height="10" rx="5"/>
+                <rect x="96" y="144" width="160" height="10" rx="5"/>
+              </g>
+              <g fill="#ff5c7a" opacity=".85">
+                <rect x="96" y="200" width="70" height="60" rx="8"/>
+                <rect x="182" y="212" width="90" height="48" rx="8"/>
+                <rect x="290" y="188" width="60" height="72" rx="8"/>
+                <rect x="366" y="220" width="120" height="40" rx="8"/>
+              </g>
+              <circle cx="530" cy="110" r="26" fill="none" stroke="#38e8c4" stroke-width="3"/>
+              <path d="M96 280h440" stroke="#4a6cf7" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="bb-vcard-body">
+            <div class="bb-meta"><span class="bb-tag">创作幕后</span><span class="bb-tag cyan">干货</span></div>
+            <h3>从 6 小时素材到 8 分钟成片：我的剪辑流程公开</h3>
+            <p>素材管理、粗剪节奏、配乐选择与调色思路，一套可复用的工作流。</p>
+            <div class="bb-vcard-foot">
+              <span>作者：剪到最后一秒</span>
+              <span class="bb-row">
+                <button class="bb-mini-btn" data-bb-like>♡ <span>9530</span></button>
+                <button class="bb-mini-btn save" data-bb-save>☆</button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bb-vcard">
+          <div class="bb-vcard-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：深夜书桌台灯与摊开的笔记本">
+              <rect width="640" height="360" fill="#1a1428"/>
+              <rect x="0" y="240" width="640" height="120" fill="#241a35"/>
+              <path d="M180 80l60 160H120z" fill="#ffc65c" opacity=".18"/>
+              <rect x="150" y="60" width="60" height="24" rx="10" fill="#ffc65c"/>
+              <path d="M180 84v150" stroke="#ffc65c" stroke-width="4"/>
+              <rect x="260" y="200" width="220" height="14" rx="7" fill="#f3e4c8" opacity=".8"/>
+              <rect x="260" y="222" width="180" height="10" rx="5" fill="#f3e4c8" opacity=".5"/>
+              <rect x="260" y="240" width="200" height="10" rx="5" fill="#f3e4c8" opacity=".4"/>
+              <circle cx="510" cy="150" r="40" fill="none" stroke="#8a7bff" stroke-width="3"/>
+              <path d="M480 150h60M510 120v60" stroke="#8a7bff" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="bb-vcard-body">
+            <div class="bb-meta"><span class="bb-tag">治愈影像</span><span class="bb-tag">日常记录</span></div>
+            <h3>关掉通知的第 30 天：一个内容人的夜晚</h3>
+            <p>慢下来的三十个夜晚，读完了四本书，也重新想清楚要拍什么。</p>
+            <div class="bb-vcard-foot">
+              <span>作者：晚风电台</span>
+              <span class="bb-row">
+                <button class="bb-mini-btn" data-bb-like>♡ <span>6247</span></button>
+                <button class="bb-mini-btn save" data-bb-save>☆</button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bb-vcard">
+          <div class="bb-vcard-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：录音棚里的麦克风与声波线条">
+              <rect width="640" height="360" fill="#131d2e"/>
+              <circle cx="320" cy="150" r="80" fill="#1b2841" stroke="#38e8c4" stroke-width="2"/>
+              <rect x="300" y="90" width="40" height="90" rx="20" fill="#38e8c4" opacity=".85"/>
+              <path d="M280 170a40 40 0 0080 0" fill="none" stroke="#38e8c4" stroke-width="5"/>
+              <rect x="312" y="200" width="16" height="60" fill="#8a7bff"/>
+              <g stroke="#ff5c7a" stroke-width="3" fill="none" opacity=".8">
+                <path d="M120 300q32-56 64 0t64 0 64 0"/>
+                <path d="M360 300q32-56 64 0t64 0 64 0"/>
+              </g>
+            </svg>
+          </div>
+          <div class="bb-vcard-body">
+            <div class="bb-meta"><span class="bb-tag cyan">音乐现场</span><span class="bb-tag">人物访谈</span></div>
+            <h3>在一间 12 平米的录音棚里，他们做了十年音乐</h3>
+            <p>从设备清单到收支账本，独立音乐人的现实与浪漫都被记录下来。</p>
+            <div class="bb-vcard-foot">
+              <span>作者：分轨手记</span>
+              <span class="bb-row">
+                <button class="bb-mini-btn" data-bb-like>♡ <span>7814</span></button>
+                <button class="bb-mini-btn save" data-bb-save>☆</button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bb-vcard">
+          <div class="bb-vcard-cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="视频封面：山间徒步小径与背包客身影">
+              <rect width="640" height="360" fill="#0f2a24"/>
+              <path d="M0 260l160-120 120 90 120-70 240 150v50H0z" fill="#1d4a3a" opacity=".9"/>
+              <path d="M0 300l180-110 130 80 130-56 200 116v30H0z" fill="#2b6b52" opacity=".85"/>
+              <circle cx="500" cy="90" r="42" fill="#ffc65c" opacity=".7"/>
+              <g fill="#0b1120">
+                <circle cx="300" cy="248" r="12"/>
+                <rect x="292" y="260" width="16" height="44" rx="7"/>
+                <rect x="282" y="272" width="12" height="32" rx="6"/>
+                <rect x="308" y="272" width="12" height="32" rx="6"/>
+              </g>
+              <path d="M240 330q90-22 200 0" stroke="#38e8c4" stroke-width="2" fill="none" opacity=".6"/>
+            </svg>
+          </div>
+          <div class="bb-vcard-body">
+            <div class="bb-meta"><span class="bb-tag">户外活动</span><span class="bb-tag pink">健康运动</span></div>
+            <h3>三天两夜，把装备减到 8 公斤的轻量化实践</h3>
+            <p>逐件称重、逐项取舍，附完整装备表与真实体感复盘。</p>
+            <div class="bb-vcard-foot">
+              <span>作者：背包轻一点</span>
+              <span class="bb-row">
+                <button class="bb-mini-btn" data-bb-like>♡ <span>5482</span></button>
+                <button class="bb-mini-btn save" data-bb-save>☆</button>
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="bb-divider" style="margin:30px 0"></div>
+
+      <div class="bb-side-list">
+        <a class="bb-side-item" href="#bb-authors">
+          <span class="bb-side-num">05</span>
+          <div>
+            <h3>比比资源 × 高校影像社：青年创作者联合展映</h3>
+            <p>12 所高校、37 部作品，平台提供正版展映通道与专业评审反馈。</p>
+            <div class="bb-meta"><span class="bb-tag cyan">官方发布</span><span>报名中</span></div>
+          </div>
+        </a>
+        <a class="bb-side-item" href="#bb-essay">
+          <span class="bb-side-num">06</span>
+          <div>
+            <h3>为什么我们坚持给每部作品标注拍摄参数</h3>
+            <p>可学习、可复现，是比比资源内容生态里最重要的一条产品原则。</p>
+            <div class="bb-meta"><span class="bb-tag">行业观察</span><span>深度</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="bb-sec" id="bb-topics">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">SERIES · 专题企划</span>
+          <h2>比比资源专题企划 · <span>持续更新中</span></h2>
+          <p>围绕城市、创作与生活三条主线展开，每个专题由平台编辑与签约创作者共同运营。</p>
+        </div>
+      </div>
+      <div class="bb-topic-grid">
+        <article class="bb-topic">
+          <span class="bb-topic-status">● 更新至第 6 集 · 连载中</span>
+          <h3>《城市醒着》· 冬季原创影像企划</h3>
+          <p>记录城市在非典型时段里的真实状态，从凌晨到深夜，从街头到后台。</p>
+          <ul>
+            <li>第 6 集｜凌晨四点的早餐铺与守夜人</li>
+            <li>第 5 集｜末班地铁上的三十张面孔</li>
+            <li>第 4 集｜批发市场天亮之前的四小时</li>
+          </ul>
+        </article>
+        <article class="bb-topic">
+          <span class="bb-topic-status">● 更新至第 9 期 · 每周三更新</span>
+          <h3>《幕后手册》· 创作者经验分享企划</h3>
+          <p>把专业制作流程拆成可以照着做的步骤，让创意不被技术门槛拦住。</p>
+          <ul>
+            <li>第 9 期｜预算有限时，声音比画面更值得投入</li>
+            <li>第 8 期｜如何给访谈对象建立安全感</li>
+            <li>第 7 期｜素材归档的命名与备份规则</li>
+          </ul>
+        </article>
+        <article class="bb-topic">
+          <span class="bb-topic-status">● 更新至第 4 集 · 每月一集</span>
+          <h3>《留下一点光》· 公益影像合作企划</h3>
+          <p>与公益机构共同记录真实的一线故事，用影像承担一份社会责任。</p>
+          <ul>
+            <li>第 4 集｜乡村图书室的第十年</li>
+            <li>第 3 集｜社区食堂里的午餐时间</li>
+            <li>第 2 集｜一群人的旧衣回收实验</li>
+          </ul>
+        </article>
+        <article class="bb-topic">
+          <span class="bb-topic-status">● 更新至第 12 集 · 已完结</span>
+          <h3>《一街一店》· 在地文化纪录企划</h3>
+          <p>用一年时间走访同一条街上的 12 家小店，记录他们的经营与坚持。</p>
+          <ul>
+            <li>第 12 集｜修表铺的最后一位学徒</li>
+            <li>第 11 集｜开了二十七年的裁缝店</li>
+            <li>第 10 集｜只卖一种面的小馆子</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作者矩阵 -->
+  <section class="bb-sec" id="bb-authors">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">CREATORS · 创作者矩阵</span>
+          <h2>比比资源签约<span>创作者</span> · 六种不同的表达</h2>
+          <p>他们是平台内容生态的基石，也是社区里最真实的声音。</p>
+        </div>
+      </div>
+      <div class="bb-author-grid">
+        <article class="bb-author">
+          <div class="bb-avatar a1" data-bb-author data-name="凌晨四点" data-field="城市纪录 / 纪实摄影" data-works="86" data-fans="24.6万" data-bio="纪录片导演，长期拍摄城市非典型时段。相信好画面来自足够的等待，习惯在开机前先和拍摄对象聊上两小时。代表作《城市醒着》系列，在比比资源累计播放超过六百万。" tabindex="0" role="button" aria-label="查看创作者凌晨四点的资料">凌</div>
+          <div>
+            <h3>凌晨四点</h3>
+            <div class="bb-role">城市纪录 · 纪实摄影</div>
+            <p>纪录片导演，长期拍摄城市非典型时段。相信好画面来自足够的等待，习惯在开机前先和拍摄对象聊上两小时。代表作《城市醒着》系列，在比比资源累计播放超过六百万，作品以克制的旁白和完整的现场声见长。</p>
+            <div class="bb-author-nums"><span>作品 <b>86</b></span><span>粉丝 <b>24.6万</b></span><span>获赞 <b>112万</b></span></div>
+          </div>
+        </article>
+
+        <article class="bb-author">
+          <div class="bb-avatar a2" data-bb-author data-name="半勺盐" data-field="美食烹饪 / 生活技巧" data-works="142" data-fans="31.8万" data-bio="前餐厅后厨，现全职美食内容创作者。主张把复杂菜谱翻译成普通人听得懂的步骤，视频里几乎不出现滤镜。在比比资源开设《一锅到底》系列，被大量用户收藏为做饭参考。" tabindex="0" role="button" aria-label="查看创作者半勺盐的资料">半</div>
+          <div>
+            <h3>半勺盐</h3>
+            <div class="bb-role">美食烹饪 · 生活技巧</div>
+            <p>前餐厅后厨，现全职美食内容创作者。主张把复杂菜谱翻译成普通人听得懂的步骤，视频里几乎不出现滤镜。在比比资源开设《一锅到底》系列，被大量用户收藏为做饭参考，也常年回答评论区的失败原因。</p>
+            <div class="bb-author-nums"><span>作品 <b>142</b></span><span>粉丝 <b>31.8万</b></span><span>获赞 <b>186万</b></span></div>
+          </div>
+        </article>
+
+        <article class="bb-author">
+          <div class="bb-avatar a3" data-bb-author data-name="剪到最后一秒" data-field="剪辑教学 / 制作流程" data-works="64" data-fans="18.2万" data-bio="职业剪辑师，参与过多部商业短片与剧集后期。喜欢把工作流公开，认为方法可以复制、风格必须自己去长。在比比资源持续更新《幕后手册》系列，附赠可下载的模板与检查清单。" tabindex="0" role="button" aria-label="查看创作者剪到最后一秒的资料">剪</div>
+          <div>
+            <h3>剪到最后一秒</h3>
+            <div class="bb-role">剪辑教学 · 制作流程</div>
+            <p>职业剪辑师，参与过多部商业短片与剧集后期。喜欢把工作流公开，认为方法可以复制、风格必须自己去长。在比比资源持续更新《幕后手册》系列，附赠可下载的模板与检查清单，被不少新人当作入门教材。</p>
+            <div class="bb-author-nums"><span>作品 <b>64</b></span><span>粉丝 <b>18.2万</b></span><span>获赞 <b>74万</b></span></div>
+          </div>
+        </article>
+
+        <article class="bb-author">
+          <div class="bb-avatar a4" data-bb-author data-name="盐渍橘子" data-field="旅行见闻 / 城市探索" data-works="51" data-fans="15.7万" data-bio="边走边拍的旅行内容作者，偏爱没有攻略的行程。镜头里常出现天气、交通和当地人的日常，而不是热门机位。相信旅行视频的价值是让人愿意出发，而不是替人看完风景。" tabindex="0" role="button" aria-label="查看创作者盐渍橘子的资料">盐</div>
+          <div>
+            <h3>盐渍橘子</h3>
+            <div class="bb-role">旅行见闻 · 城市探索</div>
+            <p>边走边拍的旅行内容作者，偏爱没有攻略的行程。镜头里常出现天气、交通和当地人的日常，而不是热门机位。相信旅行视频的价值是让人愿意出发，而不是替人看完风景，因此总在片尾留下自己的行程笔记。</p>
+            <div class="bb-author-nums"><span>作品 <b>51</b></span><span>粉丝 <b>15.7万</b></span><span>获赞 <b>62万</b></span></div>
+          </div>
+        </article>
+
+        <article class="bb-author">
+          <div class="bb-avatar a5" data-bb-author data-name="分轨手记" data-field="音乐现场 / 文化访谈" data-works="39" data-fans="11.3万" data-bio="独立音乐现场记录者，常年出现在小型 Livehouse 与排练房。擅长在嘈杂里抓住一段安静的对白，也愿意花整集篇幅聊设备的钱从哪来。作品保留完整现场声，反对过度修音。" tabindex="0" role="button" aria-label="查看创作者分轨手记的资料">分</div>
+          <div>
+            <h3>分轨手记</h3>
+            <div class="bb-role">音乐现场 · 文化访谈</div>
+            <p>独立音乐现场记录者，常年出现在小型 Livehouse 与排练房。擅长在嘈杂里抓住一段安静的对白，也愿意花整集篇幅聊设备的钱从哪来。作品保留完整现场声，反对过度修音，在比比资源拥有稳定的乐迷社区。</p>
+            <div class="bb-author-nums"><span>作品 <b>39</b></span><span>粉丝 <b>11.3万</b></span><span>获赞 <b>46万</b></span></div>
+          </div>
+        </article>
+
+        <article class="bb-author">
+          <div class="bb-avatar a6" data-bb-author data-name="晚风电台" data-field="治愈影像 / 日常记录" data-works="73" data-fans="20.5万" data-bio="以夜晚为主题的影像作者，内容多为散步、读书与独处记录。语速慢、信息密度低，却长期占据比比资源治愈类内容榜首。她认为陪伴感是一种稀缺的观看体验，值得被认真制作。" tabindex="0" role="button" aria-label="查看创作者晚风电台的资料">晚</div>
+          <div>
+            <h3>晚风电台</h3>
+            <div class="bb-role">治愈影像 · 日常记录</div>
+            <p>以夜晚为主题的影像作者，内容多为散步、读书与独处记录。语速慢、信息密度低，却长期占据比比资源治愈类内容榜首。她认为陪伴感是一种稀缺的观看体验，值得被认真制作，也因此在社区里收获了大量深夜留言。</p>
+            <div class="bb-author-nums"><span>作品 <b>73</b></span><span>粉丝 <b>20.5万</b></span><span>获赞 <b>98万</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌解析长文 -->
+  <section class="bb-sec" id="bb-essay">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">DEEP DIVE · 品牌解析</span>
+          <h2>读懂<span>比比资源</span>：一个视频品牌的内容方法论</h2>
+          <p>从赛道判断到社区运营，我们把这家企业这些年的选择与取舍写清楚。</p>
+        </div>
+      </div>
+
+      <div class="bb-essay">
+        <h3>一、为什么在视频行业里，还要做一个「慢一点」的平台</h3>
+        <p>视频行业从不缺少内容的数量，稀缺的始终是可信赖的判断。当一个用户打开首页，他真正想知道的不是这里有多少部片子，而是「我点开的这一部值不值得花二十分钟」。比比资源从建立起就把这道题放在最前面：我们不做无限下拉的信息流，而是用编辑推荐、拍摄参数标注、创作者实名档案和作品讨论区，把每一次观看变成一次有依据的选择。也正因为如此，平台在早期放弃了快速增长，转而用两年时间搭建内容审核与授权体系，让原创与正版成为可验证的事实，而不是一句口号。</p>
+        <p>这套方法论落到产品上，形成了三件看得见的事。第一，所有作品都标注拍摄规格、成片时长与制作周期，专业用户能据此判断制作难度，普通用户也能读懂创作者花了多少功夫。第二，每个专题都有明确的更新时间与完结状态，不制造悬而未决的期待，用户知道下周三会看到什么。第三，评论区默认展示长评与具体反馈，短促的情绪表达会被折叠，让讨论真正围绕作品展开。这些设计看起来朴素，却在一个依赖注意力的行业里建立了稀缺的秩序感。</p>
+        <div class="bb-quote">「真正的内容生态不是让更多人上传，而是让更多值得被看见的作品拥有被完整看完的机会。」——比比资源内容团队内部准则第一条</div>
+
+        <h3>二、非标准品才是视频平台真正的护城河</h3>
+        <p>在比比资源的分类体系里，最受欢迎的三个方向分别是城市纪录、创作幕后与生活日常。它们的共同点是：几乎无法被批量生产。一次凌晨四点的跟拍需要提前两周沟通，一段幕后复盘需要创作者愿意公开自己的失败，一段日常记录则要求作者具备长期观察的耐心。平台为此设计了创作者扶持计划，按季度提供拍摄基金与设备支持，但附带一个条件：必须公开制作过程中的至少一份文档。这个条件曾让不少申请者犹豫，却最终筛选出了真正愿意分享的人。</p>
+        <p>与之配套的是内容分层机制。我们把作品分为「精选」「常设」「新声」三层，精选由编辑评审，常设按播放与收藏综合排序，新声只展示注册一年内的新创作者。三层的权重各不相同，避免新人被头部作品长期压制。数据显示，新声层的作品平均完播率反而高于精选层，因为观看者往往带着「发现」的心态进入，愿意给出更多耐心。这让我们更确信：内容生态的活力来自结构，而不是单一爆款的偶然。</p>
+        <div class="bb-essay-grid">
+          <div class="bb-essay-card">
+            <h4>拍摄参数公开</h4>
+            <p>每条作品标注设备、时长、制作周期，让学习成为观看的副产物，也让人对专业保持敬意。</p>
+          </div>
+          <div class="bb-essay-card">
+            <h4>专题更新承诺</h4>
+            <p>连载专题公示更新频率与完结时间，社区可以预期，创作者也因此获得稳定的创作节奏。</p>
+          </div>
+          <div class="bb-essay-card">
+            <h4>长评优先机制</h4>
+            <p>评论按信息量排序，具体反馈优先展示，让讨论回到作品本身，而不是情绪的对撞。</p>
+          </div>
+          <div class="bb-essay-card">
+            <h4>新声分层展示</h4>
+            <p>新人作品独立入口，避免与头部内容直接竞争，也帮助平台持续发现新的表达方式。</p>
+          </div>
+        </div>
+
+        <h3>三、从内容到社区：为什么「陪伴」比「爆款」更难</h3>
+        <p>做一个视频平台容易，做一个有人愿意长期停留的社区很难。比比资源在社区侧的投入，体现在一些不显眼的地方：我们保留了订阅主题的每周提醒，而不是无限推送；评论区的举报反馈会在七十二小时内给出处理结论；每季度公开一次内容治理报告，说明下架了多少条、原因是什么。这些动作在增长数据上几乎没有位置，却决定了一个用户是否会愿意在三年后还记得这个平台。陪伴不是情绪化的承诺，而是一连串可被核验的履约。</p>
+        <p>社区活力的另一面来自线下。过去一年，平台在六个城市组织了小型放映与创作者见面会，规模都不大，多数在百人以内。我们把预算优先花在场地和放映质量上，而不是宣传物料。放映结束后不设强制互动环节，创作者可以只坐在观众席里看完自己的片子。这些细节被参与者反复提及，也成为平台口碑积累的重要来源。深耕一个垂直领域，靠的从来不是一次高调的表态，而是把一件小事重复做对。</p>
+
+        <h3>四、未来的方向：让专业能力成为公共资源</h3>
+        <p>2026 年，比比资源把重点放在三件事上。其一，完善创作者的版权登记与授权转授通道，让一次拍摄可以产生更长期的价值；其二，把《幕后手册》系列的模板与检查清单整理成可下载的工具包，降低入门门槛；其三，与更多高校与社区机构合作，把影像课程带到没有专业设备的地方。我们不认为平台应该替创作者决定拍什么，但我们可以让「怎么拍」这件事不再昂贵。</p>
+        <p>回到最初的问题：在一个内容过剩的时代，一个视频品牌如何证明自己的价值。我们的答案是，让每个打开页面的人都能找到一部愿意看完的作品，让每个上传作品的人都能得到具体的反馈，让每一次观看都留下一点可以带走的东西。这三件事听起来都不新鲜，但只要持续运营、持续公开、持续接受质疑，它们就会慢慢变成一个品牌最可靠的资产。这也是比比资源官方网站存在的意义：不是一个展示页面，而是一份可以随时被检查的承诺。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 数据榜单 -->
+  <section class="bb-sec" id="bb-rank">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">RANKING · 数据榜单</span>
+          <h2>比比资源三榜 · <span>热度 / 新声 / 口碑</span></h2>
+          <p>榜单每周更新一次，统计口径公开在帮助中心，接受社区监督。</p>
+        </div>
+      </div>
+      <div class="bb-rank">
+        <div class="bb-rank-col">
+          <h3>本周热度榜</h3>
+          <ol>
+            <li><div><b>《城市醒着》第 6 集</b><span>播放 46.2万 · 收藏 1.8万</span></div></li>
+            <li><div><b>一锅到底：20 分钟晚餐</b><span>播放 38.7万 · 收藏 2.3万</span></div></li>
+            <li><div><b>手机电影感运镜 5 练习</b><span>播放 35.1万 · 收藏 3.1万</span></div></li>
+            <li><div><b>沿海小城的十二种蓝</b><span>播放 29.4万 · 收藏 1.2万</span></div></li>
+            <li><div><b>12 平米录音棚的十年</b><span>播放 24.8万 · 收藏 0.9万</span></div></li>
+          </ol>
+        </div>
+        <div class="bb-rank-col">
+          <h3>新声榜（注册一年内）</h3>
+          <ol>
+            <li><div><b>菜市场里的手写招牌</b><span>作者：小满 · 播放 8.6万</span></div></li>
+            <li><div><b>我在县城做咖啡的第三年</b><span>作者：豆子日常 · 播放 7.2万</span></div></li>
+            <li><div><b>给奶奶录一段口述史</b><span>作者：阿禾 · 播放 6.9万</span></div></li>
+            <li><div><b>雨天骑车通勤的第一视角</b><span>作者：慢速档 · 播放 5.4万</span></div></li>
+            <li><div><b>旧相机修复记录</b><span>作者：快门声 · 播放 4.8万</span></div></li>
+          </ol>
+        </div>
+        <div class="bb-rank-col">
+          <h3>口碑榜（长评好评率）</h3>
+          <ol>
+            <li><div><b>《留下一点光》第 4 集</b><span>好评率 98.6% · 长评 214 条</span></div></li>
+            <li><div><b>关掉通知的第 30 天</b><span>好评率 97.9% · 长评 186 条</span></div></li>
+            <li><div><b>修表铺的最后一位学徒</b><span>好评率 97.2% · 长评 152 条</span></div></li>
+            <li><div><b>三天两夜轻量化实践</b><span>好评率 96.4% · 长评 133 条</span></div></li>
+            <li><div><b>访谈：把镜头交给普通人</b><span>好评率 95.8% · 长评 121 条</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 社区评价 -->
+  <section class="bb-sec" id="bb-comments">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">COMMUNITY · 社区口碑</span>
+          <h2>他们如何评价<span>比比资源</span></h2>
+          <p>以下留言来自社区真实讨论区，未经删改，仅做长度整理。</p>
+        </div>
+        <button class="bb-btn bb-btn-ghost" id="bbOpenFeedback">提交反馈</button>
+      </div>
+      <div class="bb-comment-list">
+        <div class="bb-comment">
+          <div class="bb-comment-head">
+            <div class="bb-avatar a1">林</div><b>林间散步</b><span>2026-11-18</span>
+            <span class="bb-comment-stars">★★★★★</span>
+          </div>
+          <p>看《城市醒着》第五集的时候哭了。不是因为煽情，而是里面那位末班地铁司机说「我记住每个常在最后一班车上的人」，这句话太具体了。平台的片子有一种耐心，愿意等一个普通人把话说完，这在现在很少见。</p>
+        </div>
+        <div class="bb-comment">
+          <div class="bb-comment-head">
+            <div class="bb-avatar a3">周</div><b>周五剪片人</b><span>2026-11-15</span>
+            <span class="bb-comment-stars">★★★★★</span>
+          </div>
+          <p>作为从业者，《幕后手册》是真的有用。第 9 期讲声音投入的那一集，我直接转给了我们组的实习生。唯一的小建议是希望模板能按软件版本区分一下，个别旧版本打开会有兼容提示，已经提交反馈了。</p>
+        </div>
+        <div class="bb-comment">
+          <div class="bb-comment-head">
+            <div class="bb-avatar a4">橙</div><b>橘子汽水</b><span>2026-11-12</span>
+            <span class="bb-comment-stars">★★★★☆</span>
+          </div>
+          <p>做饭视频我基本只看半勺盐，步骤清楚，失败原因也讲。不过有几次食材在南方不太好买，希望能在简介里补一句替代方案。整体还是很信任这个平台，至少不会为了流量写夸张标题。</p>
+        </div>
+        <div class="bb-comment">
+          <div class="bb-comment-head">
+            <div class="bb-avatar a6">阿</div><b>阿禾的相机</b><span>2026-11-09</span>
+            <span class="bb-comment-stars">★★★★★</span>
+          </div>
+          <p>我是今年三月才开始投稿的新人，作品被放进新声榜之后收到很多具体的建议，有人说我收音位置不对，有人直接画了示意图。这种反馈在别的平台几乎不可能，所以愿意继续在这里更新。</p>
+        </div>
+        <div class="bb-comment">
+          <div class="bb-comment-head">
+            <div class="bb-avatar a2">山</div><b>山脚下的猫</b><span>2026-11-06</span>
+            <span class="bb-comment-stars">★★★☆☆</span>
+          </div>
+          <p>内容质量确实高，但有些长片没有章节标记，中途退出再回来要找半天进度。移动端播放器如果能记住上次观看位置就更好了。提这个不是挑刺，是真的想把它当日常使用的平台。</p>
+        </div>
+        <div class="bb-comment">
+          <div class="bb-comment-head">
+            <div class="bb-avatar a5">分</div><b>分轨听歌</b><span>2026-11-03</span>
+            <span class="bb-comment-stars">★★★★★</span>
+          </div>
+          <p>录音棚那期看了两遍。很少见到愿意讲收支账本的音乐内容，那才是独立音乐人真实的处境。片尾现场声没有修音，反而更有力量。这种「不修饰」的选择，我认为是这个平台最值得被支持的地方。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 + 合作伙伴 -->
+  <section class="bb-sec" id="bb-news">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">NEWS &amp; PARTNERS · 企业与伙伴</span>
+          <h2>比比资源<span>企业动态</span>与合作伙伴</h2>
+          <p>官方发布、版本更新与生态合作，均在每月第一周同步公示。</p>
+        </div>
+      </div>
+      <div class="bb-news">
+        <article class="bb-news-item">
+          <time>2026-11-20</time>
+          <h3>创作者扶持计划第三期开启报名</h3>
+          <p>面向注册满 90 天的原创作者，提供拍摄基金、设备支持与专业评审反馈，报名截止 12 月 20 日。</p>
+        </article>
+        <article class="bb-news-item">
+          <time>2026-11-11</time>
+          <h3>视频库新增 128 部高清正版作品</h3>
+          <p>涵盖城市纪录、手作 DIY、音乐现场与知识科普四个方向，全部支持 4K 播放与合规下载。</p>
+        </article>
+        <article class="bb-news-item">
+          <time>2026-10-28</time>
+          <h3>社区投票通道上线：年度口碑作品评选</h3>
+          <p>由社区用户与专业评审共同投票，评选结果将在 12 月中旬公布，并举办线下放映交流。</p>
+        </article>
+      </div>
+
+      <div class="bb-divider" style="margin:28px 0"></div>
+      <h3 style="margin-bottom:14px">生态合作伙伴</h3>
+      <div class="bb-brandwall">
+        <div class="bb-brandchip">城市影像档案馆</div>
+        <div class="bb-brandchip">高校影像联合社</div>
+        <div class="bb-brandchip">本地独立音乐厂牌</div>
+        <div class="bb-brandchip">公益影像计划</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bb-sec" id="bb-faq">
+    <div class="bb-wrap">
+      <div class="bb-sec-head">
+        <div>
+          <span class="bb-kicker">SUPPORT · 帮助中心</span>
+          <h2>关于比比资源的常见问题</h2>
+          <p>如果没有找到答案，可以通过页面底部的反馈入口联系我们，工作日内会回复。</p>
+        </div>
+      </div>
+      <div class="bb-faq">
+        <details open>
+          <summary>如何判断平台上的作品是原创正版？</summary>
+          <p>每部作品都有创作者实名档案与授权状态标识，标注「原创首发」「正版授权」的作品可在详情页查看授权说明。若发现疑似搬运，可在播放页提交举报，我们会在七十二小时内反馈处理结论。</p>
+        </details>
+        <details>
+          <summary>投稿需要满足什么条件？</summary>
+          <p>注册满 30 天、完成实名认证即可投稿。作品需为原创或已获授权，画质建议 1080P 以上、时长不少于 90 秒。我们不限制题材，但要求画面与声音不侵权，且不含误导性标题。</p>
+        </details>
+        <details>
+          <summary>高清内容可以下载吗？</summary>
+          <p>标注「支持下载」的作品开放合规下载，供个人学习与本地收藏使用，不得二次商用。下载入口在播放页的操作区，需登录账号后使用。</p>
+        </details>
+        <details>
+          <summary>创作者扶持计划的评审标准是什么？</summary>
+          <p>主要看三项：作品的完成度与原创性、可公开的制作文档质量、以及社区反馈的具体程度。资金规模不是唯一标准，我们更关注创作者是否具备持续产出的意愿。</p>
+        </details>
+        <details>
+          <summary>评论为什么会被折叠？</summary>
+          <p>无具体信息的短评、重复发布的内容以及含攻击性表达的评论会被折叠，但仍可在展开后查看。我们希望通过排序机制，让有信息量的讨论更容易被看到。</p>
+        </details>
+        <details>
+          <summary>平台会公开内容治理数据吗？</summary>
+          <p>会。每季度发布一次内容治理报告，说明下架数量、主要原因与申诉处理情况。报告在帮助中心的「治理公示」栏目长期保留，供社区查阅。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bb-footer">
+  <div class="bb-wrap">
+    <div class="bb-footer-grid">
+      <div class="bb-footer-brand">
+        <a class="bb-brand" href="#bb-hero">
+          <span class="bb-brand-mark">比</span>
+          <span class="bb-brand-txt">比比资源<small>BIBI RESOURCE</small></span>
+        </a>
+        <p>比比资源官方网站 · 以原创高清影像为核心的内容平台，连接创作者、企业与真实表达的观众，持续运营值得信赖的视频社区。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#bb-focus">焦点推荐</a></li>
+          <li><a href="#bb-videos">高清视频库</a></li>
+          <li><a href="#bb-topics">专题企划</a></li>
+          <li><a href="#bb-rank">数据榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="#bb-essay">品牌解析</a></li>
+          <li><a href="#bb-authors">创作者矩阵</a></li>
+          <li><a href="#bb-news">企业动态</a></li>
+          <li><a href="#bb-faq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与方式</h4>
+        <ul>
+          <li><a href="#" id="bbFootSubmit">投稿入口</a></li>
+          <li><a href="#" id="bbFootFeedback">意见反馈</a></li>
+          <li><a href="#bb-comments">社区讨论</a></li>
+          <li><a href="#bb-topics">专题报名</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bb-copyright">
+      <span>© 2026 比比资源 · 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容均为原创或正版授权 · 备案号：京ICP备2026018873号-2</span>
+    </div>
+  </div>
+</footer>
+
+<button class="bb-totop" id="bbToTop" aria-label="回到顶部">↑</button>
+<div class="bb-toast" id="bbToast" role="status" aria-live="polite"></div>
+
+<!-- 投稿弹窗 -->
+<div class="bb-modal" id="bbSubmitModal" role="dialog" aria-modal="true" aria-labelledby="bbSubmitTitle">
+  <div class="bb-modal-box">
+    <button class="bb-modal-close" data-bb-close aria-label="关闭">×</button>
+    <h3 id="bbSubmitTitle">投稿与分享</h3>
+    <p>把你的作品交给比比资源。提交后 5 个工作日内，编辑会通过站内信回复初审意见。</p>
+    <div class="bb-form-row"><input type="text" placeholder="作品标题（必填）" id="bbSubmitTitleInput"></div>
+    <div class="bb-form-row"><input type="text" placeholder="联系方式或站内昵称" id="bbSubmitContact"></div>
+    <div class="bb-form-row"><textarea rows="3" placeholder="一句话介绍你的作品与拍摄规格"></textarea></div>
+    <button class="bb-btn bb-btn-primary" id="bbSubmitSend" style="width:100%;justify-content:center">提交投稿</button>
+  </div>
+</div>
+
+<!-- 反馈弹窗 -->
+<div class="bb-modal" id="bbFeedbackModal" role="dialog" aria-modal="true" aria-labelledby="bbFeedbackTitle">
+  <div class="bb-modal-box">
+    <button class="bb-modal-close" data-bb-close aria-label="关闭">×</button>
+    <h3 id="bbFeedbackTitle">意见反馈</h3>
+    <p>我们认真对待每一条具体建议，它会进入产品与内容团队的每周复盘。</p>
+    <div class="bb-form-row"><input type="text" placeholder="反馈类型，例如播放器 / 内容 / 社区" id="bbFeedbackType"></div>
+    <div class="bb-form-row"><textarea rows="4" placeholder="请描述你遇到的情况与期望的改进"></textarea></div>
+    <button class="bb-btn bb-btn-primary" id="bbFeedbackSend" style="width:100%;justify-content:center">提交反馈</button>
+  </div>
+</div>
+
+<!-- 作者弹窗 -->
+<div class="bb-modal" id="bbAuthorModal" role="dialog" aria-modal="true" aria-labelledby="bbAuthorName">
+  <div class="bb-modal-box">
+    <button class="bb-modal-close" data-bb-close aria-label="关闭">×</button>
+    <h3 id="bbAuthorName">创作者</h3>
+    <p id="bbAuthorField" style="color:#8ff5e0;font-size:13px"></p>
+    <p id="bbAuthorBio"></p>
+    <p id="bbAuthorNums" style="color:var(--bb-amber);font-size:13px"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var bbToastEl = document.getElementById('bbToast');
+  var bbToastTimer = null;
+  function bbToast(msg){
+    bbToastEl.textContent = msg;
+    bbToastEl.classList.add('on');
+    clearTimeout(bbToastTimer);
+    bbToastTimer = setTimeout(function(){ bbToastEl.classList.remove('on'); }, 2200);
+  }
+
+  /* 移动端导航折叠 */
+  var navToggle = document.getElementById('bbNavToggle');
+  var menu = document.getElementById('bbMenu');
+  navToggle.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById('bbSearchInput');
+  var searchBtn = document.getElementById('bbSearchBtn');
+  var searchFb = document.getElementById('bbSearchFeedback');
+  var bbIndexData = [
+    '城市醒着 第 6 集 · 凌晨四点的早餐铺',
+    '一锅到底：20 分钟晚餐方案',
+    '从 6 小时素材到 8 分钟成片',
+    '沿海小城的十二种蓝',
+    '12 平米录音棚里的十年',
+    '轻量化徒步装备表',
+    '《幕后手册》第 9 期',
+    '《留下一点光》第 4 集'
+  ];
+  function bbDoSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchFb.classList.add('on');
+      searchFb.textContent = '请输入关键词，例如「城市纪实」「剪辑」「访谈」。';
+      return;
+    }
+    var hits = bbIndexData.filter(function(t){ return t.indexOf(q) > -1; });
+    searchFb.classList.add('on');
+    if(hits.length){
+      searchFb.textContent = '找到 ' + hits.length + ' 条相关结果：' + hits.slice(0,3).join('；') + '。';
+    }else{
+      searchFb.textContent = '暂未匹配到「' + q + '」，已为你记录搜索词，编辑会据此补充内容。';
+    }
+  }
+  searchBtn.addEventListener('click', bbDoSearch);
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ bbDoSearch(); } });
+
+  /* 点赞 / 收藏 */
+  document.querySelectorAll('[data-bb-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var span = btn.querySelector('span');
+      var raw = span ? span.textContent.replace(/[^\d.]/g,'') : '';
+      var num = parseFloat(raw);
+      var liked = btn.classList.toggle('act');
+      if(span && !isNaN(num)){
+        var unit = raw.indexOf('.') > -1 ? '' : '';
+        var val = liked ? (num + 1) : (num - 1);
+        if(val < 0){ val = 0; }
+        span.textContent = val + unit;
+      }else{
+        btn.textContent = liked ? '♥ 已赞' : '♡ 点赞';
+        if(liked){ btn.classList.add('act'); }
+      }
+      bbToast(liked ? '已点赞，感谢你的支持' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('[data-bb-save]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('act');
+      btn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+      bbToast(on ? '已加入收藏，可在个人中心查看' : '已取消收藏');
+    });
+  });
+
+  /* 复制链接 */
+  document.querySelectorAll('[data-bb-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = '比比资源 · 焦点内容《城市醒着》第一集';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){
+          bbToast('作品信息已复制，可粘贴分享');
+        }).catch(function(){ bbToast('复制失败，请手动选择文本'); });
+      }else{
+        bbToast('当前环境不支持自动复制');
+      }
+    });
+  });
+
+  /* 分享提示 */
+  document.querySelectorAll('[data-bb-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      bbToast('分享面板：支持微信 / 微博 / QQ，已生成作品卡片');
+    });
+  });
+
+  /* 作者弹窗 */
+  var authorModal = document.getElementById('bbAuthorModal');
+  document.querySelectorAll('[data-bb-author]').forEach(function(el){
+    var open = function(){
+      document.getElementById('bbAuthorName').textContent = el.dataset.name;
+      document.getElementById('bbAuthorField').textContent = el.dataset.field;
+      document.getElementById('bbAuthorBio').textContent = el.dataset.bio;
+      document.getElementById('bbAuthorNums').textContent = '作品 ' + el.dataset.works + ' · 粉丝 ' + el.dataset.fans;
+      authorModal.classList.add('on');
+    };
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+  });
+
+  /* 弹窗通用关闭 */
+  function bbCloseAll(){
+    document.querySelectorAll('.bb-modal').forEach(function(m){ m.classList.remove('on'); });
+  }
+  document.querySelectorAll('[data-bb-close]').forEach(function(b){ b.addEventListener('click', bbCloseAll); });
+  document.querySelectorAll('.bb-modal').forEach(function(m){
+    m.addEventListener('click', function(e){ if(e.target === m){ bbCloseAll(); } });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ bbCloseAll(); } });
+
+  /* 投稿 */
+  var submitModal = document.getElementById('bbSubmitModal');
+  function bbOpenSubmit(){ submitModal.classList.add('on'); }
+  document.getElementById('bbOpenSubmit').addEventListener('click', bbOpenSubmit);
+  document.getElementById('bbFootSubmit').addEventListener('click', function(e){ e.preventDefault(); bbOpenSubmit(); });
+  document.getElementById('bbSubmitSend').addEventListener('click', function(){
+    var t = document.getElementById('bbSubmitTitleInput').value.trim();
+    var c = document.getElementById('bbSubmitContact').value.trim();
+    if(!t || !c){
+      bbToast('请填写作品标题与联系方式');
+      return;
+    }
+    bbCloseAll();
+    bbToast('投稿已提交，编辑将在 5 个工作日内回复');
+    document.getElementById('bbSubmitTitleInput').value = '';
+    document.getElementById('bbSubmitContact').value = '';
+  });
+
+  /* 反馈 */
+  var feedbackModal = document.getElementById('bbFeedbackModal');
+  function bbOpenFeedback(){ feedbackModal.classList.add('on'); }
+  document.getElementById('bbOpenFeedback').addEventListener('click', bbOpenFeedback);
+  document.getElementById('bbFootFeedback').addEventListener('click', function(e){ e.preventDefault(); bbOpenFeedback(); });
+  document.getElementById('bbFeedbackSend').addEventListener('click', function(){
+    var t = document.getElementById('bbFeedbackType').value.trim();
+    if(!t){
+      bbToast('请先填写反馈类型');
+      return;
+    }
+    bbCloseAll();
+    bbToast('反馈已收到，感谢你帮助平台变得更好');
+    document.getElementById('bbFeedbackType').value = '';
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('bbToTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 560){ toTop.classList.add('on'); }else{ toTop.classList.remove('on'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 数字滚动 */
+  function bbFormat(n){
+    if(n >= 1000000){ return (n/10000).toFixed(0) + '万'; }
+    return n.toLocaleString('en-US');
+  }
+  var counters = document.querySelectorAll('[data-bb-count]');
+  var done = false;
+  function bbRunCounters(){
+    if(done){ return; }
+    done = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.dataset.bbCount, 10);
+      var start = null;
+      var dur = 1200;
+      function step(ts){
+        if(!start){ start = ts; }
+        var p = Math.min((ts - start)/dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = bbFormat(Math.round(target * eased));
+        if(p < 1){ requestAnimationFrame(step); }
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ bbRunCounters(); io.disconnect(); } });
+    }, {threshold:.4});
+    io.observe(document.querySelector('.bb-hero-stats'));
+  }else{
+    bbRunCounters();
+  }
+})();
+</script>
+</body>
+  </html>
